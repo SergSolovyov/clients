@@ -1,0 +1,142 @@
+.body__row td {
+  padding: 0 10px;
+  height: 60px;
+}
+.body__row {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  outline: 1px solid transparent;
+}
+.table__body {
+  background-color: var(--white);
+  min-height: 300px;
+}
+.body__row.focus {
+  animation: pulsed-border 1s infinite ease-in-out;
+}
+
+@keyframes pulsed-border {
+  0% {outline-color: rgba(152, 115, 255, 1)}
+  50% {outline-color: rgba(152, 115, 255, 0)}
+  100% {outline-color: rgba(152, 115, 255, 1)}
+}
+
+.body__id {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--txt_grey);
+}
+.body__name, .body__date, .body__time {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: var(--black);
+}
+.body__date {
+  margin-right: 10px;
+}
+.body__time {
+  color: var(--txt_grey);
+}
+
+.contacts__list {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 108px;
+}
+.contacts__item:not(:nth-child(6n)) {
+  margin-right: 7px;
+}
+.contacts__item:last-child {
+  margin-right: 0;
+}
+
+.link-vk, .link-fb, .link-number, .link-email, .link-other {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  opacity: 0.7;
+  transition: opacity .2s ease;
+}
+.contacts-link:hover {
+  opacity: 1;
+}
+.link-vk {
+  background-image: url("../images/vk.svg");
+}
+.link-fb {
+  background-image: url("../images/fb.svg");
+}
+.link-number {
+  background-image: url("../images/phone.svg");
+}
+.link-email {
+  background-image: url("../images/mail.svg");
+}
+.link-other {
+  background-image: url("../images/other.svg");
+}
+
+.contacts-btn-container {
+  display: flex;
+  align-items: center;
+}
+.contacts__btn-edit, .contacts__btn-delete {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+.btn-edit-icon, .btn-delete-icon {
+  margin-right: 3px;
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.btn-edit-icon {
+  background-image: url("../images/edit-btn-icon.svg");
+}
+.btn-delete-icon {
+  background-image: url("../images/delete-btn-icon.svg");
+}
+.btn-edit-text, .btn-delete-text {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: var(--black);
+  transition: color .2s ease-in-out;
+}
+
+.contacts__btn-edit:hover .btn-edit-text {
+  color: var(--color-main);
+}
+.contacts__btn-delete:hover .btn-delete-text {
+  color: var(--color-red);
+}
+.btn-more-contacts {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-main);
+  border-radius: 50%;
+  display: none;
+  font-size: 8px;
+  line-height: 10px;
+  font-weight: 600;
+  color: var(--black);
+  align-items: center;
+  justify-content: center;
+}
+.btn-more-contacts.active {
+  display: flex;
+}
+.btn-copy {
+  width: 15px;
+  height: 15px;
+}
+.btn-copy:hover svg {
+  transition: fill .3s ease-in-out;
+}
+.btn-copy:hover svg {
+  fill: var(--color-secondary);
+}

@@ -1,0 +1,33 @@
+.btn-add-client {
+  margin: 0 auto;
+  padding: 12px 26px ;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-main);
+  transition: background-color .3s ease-in-out;
+}
+.btn-add-client-text {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  color: var(--color-main);
+  transition: color .3s ease-in-out;
+}
+.btn-add-icon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.btn-add-icon svg {
+  fill: var(--color-main);
+  transition: fill .3s ease-in-out;
+}
+.btn-add-client:hover {
+  background-color: var(--color-secondary);
+}
+.btn-add-client:hover .btn-add-client-text {
+  color: var(--white);
+}
+.btn-add-client:hover .btn-add-icon svg {
+  fill: var(--white);
+}

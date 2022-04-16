@@ -1,0 +1,61 @@
+
+.table {
+  margin-bottom: 40px;
+  width: 100%;
+  border-spacing: 0;
+  position: relative;
+}
+.table__head {
+  font-size: 12px;
+}
+
+.table__head th {
+  padding: 10px;
+}
+
+.head-btn {
+  display: flex;
+  align-items: center;
+  line-height: 17px;
+  white-space: nowrap;
+}
+
+.head-btn.selected  .head-btn-text {
+  color: var(--color-main);
+}
+[data-sorted="true"] .icon-arrow {
+  opacity: 1;
+  transform: rotateX(-180deg);
+}
+.head-btn.selected .btn-name-icon-letters {
+  opacity: 1;
+}
+[data-sorted="false"] .icon-arrow {
+  opacity: 0.7;
+  transform: none;
+}
+.head-btn-text {
+  display: flex;
+  color: var(--txt_grey);
+  font-weight: 400;
+  pointer-events: none;
+}
+.icon-arrow {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url('../images/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*opacity: 0.7;*/
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+  pointer-events: none;
+}
+.btn-name-icon-letters {
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 600;
+  color: var(--color-main);
+  opacity: 0.7;
+  transition: opacity .3s ease-in-out;
+}

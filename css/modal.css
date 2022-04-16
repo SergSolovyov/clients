@@ -1,0 +1,301 @@
+.modal-element {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-title {
+  display: inline-block;
+  margin-right: 9px;
+}
+.modal-client-id {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--txt_grey);
+}
+.form {
+  margin: auto;
+  padding-bottom: 25px;
+  width: 450px;
+  min-height: 396px;
+  background-color: var(--white);
+  animation: modal .4s ease-in-out;
+  position: relative;
+}
+@keyframes modal {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.form-wrapper-data {
+  padding: 25px 30px;
+}
+
+.placeholder-container {
+  padding-top: 16px;
+  position: relative;
+}
+.placeholder-container:not(:last-child) {
+  margin-bottom: 15px;
+}
+.form-input {
+  padding-bottom: 4px;
+  width: 100%;
+  border-bottom: 1px solid var(--color-grey);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  color: var(--black);
+  transition: border-color .3s ease-in-out;
+}
+.form-input.is-invalid {
+  border-color: var(--color-red);
+}
+.form-input.is-invalid + .form-label,
+.form-input.is-invalid + .form-label::after {
+  color: var(--color-red);
+}
+.form-label, .form-label-lastname {
+  padding-right: 8px;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--txt_grey);
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  pointer-events: none;
+  transition: transform .2s ease, color .3s ease-in-out;
+}
+.form-label::after {
+  content: '*';
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--color-main);
+  transition: color .3s ease-in-out;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label,
+.form-input:focus +.form-label-lastname,
+.form-input:not(:placeholder-shown) +.form-label-lastname{
+  transform: translateY(-20px);
+  font-size: 10px;
+}
+
+.btn-add-contact {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.btn-add-contact-text {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+  color: var(--black);
+  transition: color .3s ease-in-out;
+}
+
+.btn-add-contact-icon {
+  margin-right: 5px;
+  display: block;
+  position: relative;
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--color-main);
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
+}
+.btn-add-contact-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 6px;
+  background-color: var(--color-main);
+  border-radius: 3px;
+  transition: background-color .3s ease-in-out;
+}
+.btn-add-contact-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 2px;
+  background-color: var(--color-main);
+  border-radius: 3px;
+  transition: background-color .3s ease-in-out;
+}
+
+.btn-add-contact:hover .btn-add-contact-text {
+  color: var(--color-main);
+}
+.btn-add-contact:hover .btn-add-contact-icon {
+  background-color: var(--color-main);
+}
+.btn-add-contact:hover .btn-add-contact-icon::after,
+.btn-add-contact:hover .btn-add-contact-icon::before {
+  background-color: var(--white);
+}
+
+.form-wrapper-contacts {
+  /*margin-bottom: 25px;*/
+  padding: 8px 30px;
+  background-color: rgba(200, 197, 209, 0.2);
+}
+
+
+.btn-save-client {
+  margin-bottom: 5px;
+}
+.btn-save-client.loading {
+  background-color: var(--color-secondary);
+  pointer-events: none;
+}
+
+.contact-element {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  outline: 1px solid var(--color-grey);
+  height: 37px;
+  position: relative;
+}
+.contact-error {
+  padding-left: 123px;
+  position: absolute;
+  left: 0;
+  bottom: -13px;
+  color: var(--color-red);
+  font-size: 10px;
+}
+.contact-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 123px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: rotateX(180deg);
+  transform-origin: 0 0;
+  transition: opacity .3s ease, transform .3s ease-in-out, visibility .3s ease-in-out;
+  z-index: 5;
+  outline: 1px solid var(--color-grey);
+}
+.btn-set-contact,
+.btn-setted-contact {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--black);
+}
+.btn-set-contact {
+  text-align: left;
+  width: 100%;
+  padding: 7px 12px;
+  background-color: var(--grey-white);
+  transition: background-color .2s ease;
+}
+.btn-setted-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background-color: var(--light-grey);
+  height: 100%;
+  width: 100%;
+}
+
+.btn-icon-number {
+  transition: transform .2s ease-in-out;
+}
+.btn-setted-contact.active .btn-icon-number {
+  transform: rotateX(180deg);
+}
+.btn-set-contact:hover {
+  background-color: var(--light-grey);
+}
+.btn-setted-contact.active + .contact-list {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.contact-input {
+  padding: 8px 11px;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid var(--color-grey);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+}
+.contact-input.is-invalid {
+  border: 1px solid var(--color-red);
+}
+.contact-input::placeholder {
+  color: var(--txt_grey);
+  font-weight: 400;
+}
+.btn-delete-contact {
+  /*display: flex;*/
+  padding: 13px 7px;
+  height: 100%;
+  outline: 1px solid var(--color-grey);
+  background-color: var(--light-grey);
+  z-index: 1;
+  transition: outline-color .2s ease-in-out;
+  display: none;
+}
+.btn-delete-contact.active {
+  display: flex;
+}
+.btn-delete-contact svg {
+  fill: #B0B0B0;
+  transition: fill .2s ease-in-out;
+}
+.btn-delete-contact:hover {
+  outline-color: var(--color-red);
+}
+.btn-delete-contact:hover svg {
+  fill: var(--color-red);
+}
+
+.contact-elements {
+  /*padding-top: 17px;*/
+}
+.form-errors {
+  padding: 5px 30px;
+  height: 25px;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  color: var(--color-red);
+}
