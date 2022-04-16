@@ -65,7 +65,7 @@ export async function onSave(data, method, contactsInputs) {
 
   const clientId = method === 'POST' ? '' : data._id;
 
-  const response = await fetch(`https://salty-bayou-58928.herokuapp.com/clients/${clientId}`, {
+  const response = await fetch(`https://salty-bayou-58928.herokuapp.com/api/clients/${clientId}`, {
     method,
     body: JSON.stringify(data),
     headers: {
@@ -87,7 +87,7 @@ export async function onSave(data, method, contactsInputs) {
 }
 
 export async function getClients() {
-  const response = await fetch('https://salty-bayou-58928.herokuapp.com/clients', {
+  const response = await fetch('https://salty-bayou-58928.herokuapp.com/api/clients', {
     method: 'GET',
     headers: {
       'Content-type': 'application/json',
@@ -99,7 +99,7 @@ export async function getClients() {
 }
 
 export async function getClient(id) {
-  const response = await fetch(`https://salty-bayou-58928.herokuapp.com/clients/`, {
+  const response = await fetch(`https://salty-bayou-58928.herokuapp.com/api/clients/`, {
     method: 'GET'
   })
   let result = await response.json();
@@ -109,7 +109,7 @@ export async function getClient(id) {
 
 export async function onDelete(client) {
   console.log(client)
-  await fetch(`https://salty-bayou-58928.herokuapp.com/clients/${client._id}`, {
+  await fetch(`https://salty-bayou-58928.herokuapp.com/api/clients/${client._id}`, {
     method: 'DELETE'
   })
   const clients = await getClients();
