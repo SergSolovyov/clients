@@ -23,7 +23,7 @@ export function createClientsElements(clients) {
     clientContacts.append(createContactsElements(client.contacts));
     clientEvents.append(createContactsButtons(client));
 
-    bodyRow.id = client.id;
+    bodyRow.id = client._id;
 
     bodyRow.classList.add('body__row');
     clientId.classList.add('body__id');
