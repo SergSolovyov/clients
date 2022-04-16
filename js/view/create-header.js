@@ -64,7 +64,7 @@ async function createSearchElements(searchValue, root) {
     const listItem = document.createElement('li');
     const listLink = document.createElement('a');
 
-    listLink.href = `#${client.id}`;
+    listLink.href = `#${client._id}`;
     listLink.classList.add('search-link', 'link-reset');
     listLink.textContent = client.name + ' ' + client.surname + ' ' + client.lastName;
 
@@ -74,7 +74,7 @@ async function createSearchElements(searchValue, root) {
       root.innerHTML = '';
       searchValue.value = '';
 
-      clientFocusedElement = document.getElementById(client.id);
+      clientFocusedElement = document.getElementById(client._id);
       clientFocusedElement.classList.add('focus');
     })
 
