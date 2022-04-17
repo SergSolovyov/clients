@@ -64,7 +64,7 @@ export async function onSave(data, method, contactsInputs) {
   }
 
   const clientId = method === 'POST' ? '' : data._id;
-  // https://salty-bayou-58928.herokuapp.com/api/clients/
+  
   const response = await fetch(`https://salty-bayou-58928.herokuapp.com/api/clients/${clientId}`, {
     method,
     body: JSON.stringify(data),
