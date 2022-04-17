@@ -32,7 +32,7 @@ export function createModalWithForm(client = null, title = 'Новый клие�
 
   formTitle.textContent = title;
   // client === null ? formTitle.textContent = 'Новый клиент' : formTitle.textContent = 'Изменить данные';
-  client === null ? clientId.textContent = '' : clientId.textContent = `ID: ${client.id}`;
+  client === null ? clientId.textContent = '' : clientId.textContent = `ID: ${client._id}`;
   labelSurname.textContent = 'Фамилия';
   labelName.textContent = 'Имя';
   labelLastname.textContent = 'Отчество';
