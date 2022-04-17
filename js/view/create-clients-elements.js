@@ -103,9 +103,8 @@ function modificationDate(date) {
   const inputDate = new Date(date);
   const dateElement = document.createElement('span');
   const timeElement = document.createElement('span');
-
-  dateElement.textContent = `${(inputDate.getDay() < 28 ? '0' : '') + inputDate.getDay()}.${(inputDate.getMonth() < 10 ? '0': '') + inputDate.getMonth()}.${inputDate.getFullYear()}`;
-  timeElement.textContent = `${inputDate.getHours()}:${(inputDate.getMinutes() < 10 ? '0' : '') + inputDate.getMinutes()}`;
+  dateElement.textContent = `${inputDate.getDate()}.${(inputDate.getMonth() + 1) < 9 ? '0' + (inputDate.getMonth() + 1) : inputDate.getMonth() + 1}.${inputDate.getFullYear()}`;
+  timeElement.textContent = `${inputDate.getHours() < 9 ? '0' + inputDate.getHours(): inputDate.getHours()}:${(inputDate.getMinutes() < 10 ? '0' : '') + inputDate.getMinutes()}`;
 
   dateElement.classList.add('body__date');
   timeElement.classList.add('body__time');
